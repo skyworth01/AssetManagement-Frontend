@@ -1,0 +1,98 @@
+<div class="outer-layer">
+  <!-- heading section -->
+  <div class="header">
+    <a
+      [routerLink]="['/dashboard', { outlets: { child1: ['software'] } }]"
+      class="header-link"
+      >Asset Management</a
+    >
+    <a class="header-link"
+      ><i class="fa-solid fa-chevron-right"></i> Software</a
+    >
+    <a class="header-link"><i class="fa-solid fa-chevron-right"></i> Add</a>
+  </div>
+
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div class="form">
+      <div class="form-1">
+        <div>
+          <div class="label">ASSET NUMBER <span>*</span></div>
+          <input type="text" formControlName="assetNumber"/>
+        </div>
+        <div>
+          <div class="label">ASSET TYPE <span>*</span></div>
+          <select name="assettype" id="assettype" formControlName="assetType">
+            <option value="" selected disabled hidden>Select Asset Type</option>
+            <option value="Software">Software</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">MANUFACTURER <span>*</span></div>
+          <select name="manufacturer" id="manufacturer" formControlName="manufacturingCompany">
+            <option value="" selected disabled hidden>Select Manufacturer</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Adobe">Adobe</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">SOFTWARE CATEGORY <span>*</span></div>
+          <select name="softwareCategory" id="softwareCategory" formControlName="softwareCategory">
+            <option value="" selected disabled hidden>Select Software Category</option>
+            <option value="Design">Design</option>
+            <option value="IDE">IDE</option>
+            <option value="System">System</option>
+            <option value="Productivity">Productivity</option>
+            <option value="Management">Management</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-1">
+        <div>
+          <div class="label">VERSION <span>*</span></div>
+          <input type="text" formControlName="version"/>
+        </div>
+        <div>
+          <div class="label">SUB VERSION <span>*</span></div>
+          <input type="text" formControlName="subVersion"/>
+        </div>
+        <div>
+          <div class="label">LICENSE YEAR <span>*</span></div>
+          <input type="number" formControlName="licenseYear"/>
+        </div>
+        <div>
+          <div class="label">SOFTWARE NAME <span>*</span></div>
+          <input type="text" formControlName="softwareName"/>
+        </div>
+      </div>
+      <div class="form-1">
+        <div>
+          <div class="label">TOTAL PURCHASED LICENSE <span>*</span></div>
+          <input type="number" formControlName="purchased"/>
+        </div>
+        <div>
+          <div class="label">LICENSE EXPIRY DATE <span>*</span></div>
+          <input type="date" formControlName="licenseExpiryDate"/>
+        </div>
+        <div>
+          <div class="label">LICENSE TYPE <span>*</span></div>
+          <select name="licenseType" id="licenseType" formControlName="licenseType">
+            <option value="" selected disabled hidden>Select License Type</option>
+            <option value="Freeware">Freeware</option>
+            <option value="Managed">Managed</option>
+            <option value="Shareware">Shareware</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">LICENSE COST <span>*</span></div>
+          <input type="number" formControlName="licenseCost"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn-1" (click)="reset()">CLEAR</button>
+      <button class="btn-2" (click)="navigate()">CANCEL</button>
+      <button class="btn-3" type="submit">SAVE</button>
+    </div>
+  </form>
+</div>

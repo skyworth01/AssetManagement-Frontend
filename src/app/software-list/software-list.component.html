@@ -1,0 +1,98 @@
+<div class="outer-layer">
+  <!-- heading section -->
+  <div class="header">
+    <a
+      [routerLink]="['/dashboard', { outlets: { child1: ['software'] } }]"
+      class="header-link"
+      >Asset Management</a
+    >
+    <a class="header-link"
+      ><i class="fa-solid fa-chevron-right"></i> Software</a
+    >
+  </div>
+
+  <!-- section for search, filter, add, delete -->
+  <div class="control-section">
+    <div class="search-box">
+      <input
+        class="search-input"
+        type="search"
+        placeholder="Search Software.."
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="callApi(0)"
+      />
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-filter icon"></i>
+      <div class="filter-text">FILTER</div>
+    </div>
+    <div class="add">
+      <a
+        [routerLink]="['/dashboard', { outlets: { child1: ['add-software'] } }]"
+      >
+        <i class="fa-solid fa-plus icon"></i>
+        <div class="add-text">ADD</div>
+      </a>
+    </div>
+    <div class="delete">
+      <i class="fa-solid fa-trash icon"></i>
+      <div class="delete-text">DELETE</div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table class="software-table">
+      <tr>
+        <th><input type="checkbox" name="" id="" class="select-all" /></th>
+        <th>ASSET NO</th>
+        <th>CATEGORY</th>
+        <th>MANUFACTURER</th>
+        <th>SOFTWARE NAME</th>
+        <th>LICENSE TYPE</th>
+        <th>VERSION</th>
+        <th>PURCHASED</th>
+        <th>INSTALLED</th>
+        <th>ACTION</th>
+      </tr>
+
+        <tr
+          *ngFor="
+            let item of data
+              | paginate
+                : {
+                    itemsPerPage: 10,
+                    currentPage: currentPage,
+                    totalItems: count
+                  }
+          "
+        >
+          <td><input type="checkbox" name="" id="" class="select-all" /></td>
+          <td>{{ item.assetNumber }}</td>
+          <td>{{ item.softwareCategory }}</td>
+          <td>{{ item.manufacturingCompany }}</td>
+          <td>{{ item.softwareName }}</td>
+          <td>{{ item.licenseType }}</td>
+          <td>{{ item.version }}</td>
+          <td>{{ item.purchased }}</td>
+          <td>{{ item.installed }}</td>
+          <td>
+            <a><i class="fa-solid fa-eye"></i></a>
+            <a><i class="fa-solid fa-pen-to-square edit-btn"></i></a>
+          </td>
+        </tr>
+
+
+    </table>
+    <div class="pagination">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+</div>

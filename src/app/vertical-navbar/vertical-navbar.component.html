@@ -1,0 +1,33 @@
+<div class="sidebar_menu">
+  <div class="bytestrone-image">
+    <img class="byte-img" src="../../assets/images/bytestrone-image.png" />
+  </div>
+  <div class="menu1">
+    <ul>
+      <li>
+        <a href="/dashboard"><i class="fa-solid fa-house"></i>Home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard', { outlets: { child1: ['software'] } }]"
+          ><i class="fa-regular fa-window-maximize"></i>Asset Management</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="menu2">
+    <ul>
+      <li>
+        <a><i class="fa-solid fa-gear"></i>Settings</a>
+      </li>
+      <li>
+        <button class="button-logout" (click)="logout()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="copyright">
+    <div>Copyright &#169; 2022 Bytestrone.</div>
+    <div>All rights reserved.</div>
+  </div>
+</div>

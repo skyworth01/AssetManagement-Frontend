@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
+.bytestrone-image {
+  width: 80%;
+  height: 10vh;
+  position: relative;
+  left: 10%;
+}
+
+.byte-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.sidebar_menu {
+  background-color: #1f378c;
+  height: 100vh;
+  position: fixed;
+  width:20%;
+}
+
+.sidebar_menu .menu1 {
+  position: absolute;
+  top: 14%;
+  width: 100%;
+  left: 6%;
+}
+
+.sidebar_menu .menu1 li {
+  margin-top: 6px;
+  padding: 14px 20px;
+  list-style: none;
+}
+
+.sidebar_menu .menu1 i {
+  color: #fff;
+  font-size: 0.9vw;
+  padding-right: 15px;
+}
+
+.sidebar_menu .menu1 a {
+  color: #fff;
+  font-size: 0.9vw;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.sidebar_menu .menu2 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 6%;
+}
+
+.sidebar_menu .menu2 li {
+  margin-top: 6px;
+  padding: 14px 20px;
+  list-style: none;
+}
+
+.sidebar_menu .menu2 i {
+  color: #fff;
+  font-size: 0.9vw;
+  padding-right: 15px;
+}
+
+.sidebar_menu .menu2 a {
+  color: #fff;
+  font-size: 0.9vw;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar_menu .copyright{
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    color: #fff;
+    font-size: small;
+    font-weight: 100;
+}
+
+.sidebar_menu .copyright div{
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+}
+
+.button-logout{
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 0.9vw;
+  cursor: pointer;
+}

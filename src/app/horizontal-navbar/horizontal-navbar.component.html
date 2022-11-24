@@ -1,0 +1,50 @@
+
+<div class="container">
+
+  <div class="outer-layer">
+    
+    <!-- search box -->
+    <div class="search-box">
+      <input class="search-input" type="text" placeholder="Search Assets...">
+      <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <!-- drop-down box -->
+    <div class="dropdown">
+      <!-- <label class="dropdown_content">
+        <div class="dropdown_text">Software</div>
+        <div class="dropdown_arrow"><i class="fa-solid fa-angle-down"></i></div>
+      </label> -->
+      <select name="category" id="category" class="dropdown-select" (click)="navigateTo($event)">
+        <option value="none" selected disabled hidden>Dashboard</option>
+        <option  value="Software">Software</option>
+        <option  value="Hardrware">Hardware</option>
+      </select>
+    </div>
+  
+    <!-- notification button -->
+    <div>
+      <i class="fa-solid fa-bell notification"></i>
+    </div>
+  
+    <!-- Profile icon -->
+    <div class="profile">
+      <div class="profile_picture_container">
+        <img src="../../assets/images/avatar.png" alt="profile picture" class="profile_picture">
+      </div>
+      <div class="content">
+        <div class="top-content">
+          <p>Welcome</p>
+          <p>{{title}}.{{name}}</p>
+        </div>
+        <div class="bottom-content">
+          <p>{{ dateTime | date: "dd LLL y hh:mm aaa" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div >
+    <router-outlet name='child1'></router-outlet>
+    <!-- <app-add-software></app-add-software> -->
+  </div>
+</div>
